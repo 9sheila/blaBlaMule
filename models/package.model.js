@@ -1,6 +1,6 @@
 const mongoose = require('mongoose');
 
-const travelSchema = new mongoose.Schema(
+const packageSchema = new mongoose.Schema(
     {
         userId: {
             type: mongoose.Schema.Types.ObjectId,
@@ -15,14 +15,16 @@ const travelSchema = new mongoose.Schema(
         date: {
             type: Date,
             default: Date.now,
+
         },
         startingPoint: {
             type: String,
             required: true,
+
         },
         destination: {
             type: String,
-            required: true,
+            required: true
         },
         description: {
             type: String,
@@ -43,6 +45,6 @@ const travelSchema = new mongoose.Schema(
     }
 )
 
-const Travel = mongoose.model('Travel', travelSchema);
+const Package = mongoose.model('Package', packageSchema);
 
-module.exports = Travel;
+module.exports = Package;
