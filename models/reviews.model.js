@@ -40,6 +40,6 @@ const reviewsSchema = new mongoose.Schema({
     }
 })
 
-const Reviews = mongoose.model('Reviews', ratingSchema)
+const Reviews = mongoose.model('Reviews', reviewsSchema)
 
 module.exports = Reviews;
