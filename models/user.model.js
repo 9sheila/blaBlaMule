@@ -33,6 +33,10 @@ const userSchema = new mongoose.Schema(
     city: {
         type: String
     },
+    trips: {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: 'Travel'
+    }
   },
   {
     timestamps: true,
