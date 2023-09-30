@@ -33,10 +33,6 @@ const userSchema = new mongoose.Schema(
     city: {
         type: String
     },
-    trips: {
-        type: mongoose.Schema.Types.ObjectId,
-        ref: 'Travel'
-    }
   },
   {
     timestamps: true,
@@ -52,6 +48,12 @@ const userSchema = new mongoose.Schema(
     }
   }
 );
+userSchema.virtual('travels', {
+    ref: 'Travel',
+    foreignField: 'user',
+    localField: '_id',
+    justOne: false
+  });
 
 userSchema.pre('save', function (next) {
   const user = this;
