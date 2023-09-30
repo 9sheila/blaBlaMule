@@ -30,6 +30,9 @@ const userSchema = new mongoose.Schema(
       type: String,
       default: 'https://static.thenounproject.com/png/638636-200.png'
     },
+    city: {
+        type: String
+    },
   },
   {
     timestamps: true,
