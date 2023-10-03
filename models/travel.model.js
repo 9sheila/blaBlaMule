@@ -16,6 +16,9 @@ const travelSchema = new mongoose.Schema(
             type: Date,
             default: Date.now,
         },
+        pickupPoint: {
+            type: String,
+        },
         startingPoint: {
             type: String,
             required: true,
