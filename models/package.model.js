@@ -6,29 +6,20 @@ const packageSchema = new mongoose.Schema(
             type: mongoose.Schema.Types.ObjectId,
             ref: 'User'
         },
+        travel: {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Travel'
+        },
         weight: {
             type: Number,
             min:1,
-            max: 50,
+            max: 56,
             required: true,
         },
-        date: {
-            type: Date,
-            default: Date.now,
-
-        },
-        startingPoint: {
+        status: {
             type: String,
-            required: true,
-
+            enum: [ 'done', 'pending', 'accepted']
         },
-        destination: {
-            type: String,
-            required: true
-        },
-        description: {
-            type: String,
-        }
 
     },
     {
