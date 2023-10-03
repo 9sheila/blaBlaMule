@@ -1,0 +1,41 @@
+[
+    {
+      "user": "Juanita",
+      "weight": 50,
+      "date": "2023-10-10",
+      "pickupPoint": "La Rambla",
+      "startingPoint": "Barcelona",
+      "destination": "Havana",
+      "description": "Delivery of packages"
+  },
+  {
+    "user": "Esmeregilda",
+    "weight": 25,
+    "date": "2024-11-05",
+    "pickupPoint": "Metro Sol",
+    "startingPoint": "Madrid",
+    "destination": "Varadero",
+    "description": "Delivery of packages"
+},
+{
+    "user": "Eustaclio",
+    "weight": 33,
+    "date": "2023-12-12",
+    "pickupPoint": "23 y Vedado",
+    "startingPoint": "La Habana",
+    "destination": "Barcelona",
+    "description": "Delivery of packages"
+},
+{
+    "user": "Angustia",
+    "weight": 48,
+    "date": "2023-01-10",
+    "pickupPoint": "Estación Barcelona Saints",
+    "startingPoint": "Barcelona",
+    "destination": "Havana",
+    "description": "Delivery of packages"
+}
+
+]
+
+  

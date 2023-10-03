@@ -9,7 +9,7 @@ const travelSchema = new mongoose.Schema(
         weight: {
             type: Number,
             min:1,
-            max: 50,
+            max: 56,
             required: true,
         },
         date: {
