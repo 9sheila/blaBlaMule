@@ -5,7 +5,7 @@ const { StatusCodes } = require('http-status-codes');
 module.exports.getFilteredTravels = (req, res, next) => {
      const {id} = req.params;
     const today = new Date();  // Current date
-    const endDate = new Date('2023-12-31');  // Replace with your desired end date
+    const endDate = new Date('2024-12-31');  // Replace with your desired end date
     
     Travel.find({
       date: {

@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const authController = require('../controllers/auth.controller');
 const usersController = require('../controllers/users.controller');
+const travelController = require('../controllers/travel.controller')
 const authMiddleware = require('../middlewares/auth.middleware');
 const upload = require('../config/storage.config');
 
@@ -16,6 +17,7 @@ router.post('/login', authController.login);
 // users
 router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurrentUser);
 
-// products
+// travels
+router.get('/travels', authMiddleware.isAuthenticated, travelController.getFilteredTravels)
 
 module.exports = router;
