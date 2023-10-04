@@ -18,6 +18,6 @@ router.post('/login', authController.login);
 router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurrentUser);
 
 // travels
-router.get('/travels', authMiddleware.isAuthenticated, travelController.getFilteredTravels)
+router.get('/travels', authMiddleware.isAuthenticated, travelController.getTravels)
 
 module.exports = router;
