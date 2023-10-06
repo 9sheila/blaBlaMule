@@ -33,6 +33,10 @@ const userSchema = new mongoose.Schema(
     city: {
         type: String
     },
+    phoneNumber: {
+      type: Number,
+      required: true
+    }
   },
   {
     timestamps: true,
