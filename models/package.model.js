@@ -18,7 +18,8 @@ const packageSchema = new mongoose.Schema(
         },
         status: {
             type: String,
-            enum: [ 'done', 'pending', 'accepted']
+            enum: [ 'pending', 'accepted', 'done'],
+            default: "pending"
         },
 
     },
