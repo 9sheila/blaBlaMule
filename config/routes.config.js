@@ -19,7 +19,7 @@ router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurre
 
 // travels
 router.get('/travelsList', authMiddleware.isAuthenticated, travelController.getTravels)
-router.get('/travels/details/:id', travelController.getTravelsDetails)
+router.get('/travels/details/:id', authMiddleware.isAuthenticated, travelController.getTravelsDetails)
 
 // reviews
 router.get('/review/list/:id', authMiddleware.isAuthenticated, reviewController.listReviews);
