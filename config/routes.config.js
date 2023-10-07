@@ -21,4 +21,9 @@ router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurre
 router.get('/travelsList', authMiddleware.isAuthenticated, travelController.getTravels)
 router.get('/travels/details/:id', travelController.getTravelsDetails)
 
+// reviews
+router.get('/review/list/:id', authMiddleware.isAuthenticated, reviewController.listReviews);
+router.post('/review/create/:id', authMiddleware.isAuthenticated, reviewController.createReview);
+router.delete('/review/delete/:id', authMiddleware.isAuthenticated, reviewController.deleteReview);
+
 module.exports = router;
