@@ -13,11 +13,12 @@ module.exports.getCurrentUser = (req, res, next) => {
     })
     .catch(next)
 }
-module.exports.getUsers = (req, res, next) => {
-  User.find()
-      .populate('Travel')
-      .then((users) => {
-          res.json(users)
+module.exports.getUser = (req, res, next) => {
+  const { id } = req.params;
+
+  User.findById(id)
+      .then((user) => {
+          res.json(user)
       })
       .catch(next)
 }

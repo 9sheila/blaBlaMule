@@ -5,8 +5,6 @@ const createError = require('http-errors');
 module.exports.createReviews = (req, res, next) => {
     const data = {
         ...req.body,
-        currentUser: req.currentUser,
-        user: req.params.id,
         date: new Date()
     }
 
@@ -27,4 +25,14 @@ module.exports.deleteReviews = (req, res, next) => {
         .catch((err) => {
             console.log(err)
         })
+}
+module.exports.listReviews = (req, res, next) => {
+    console.log("no entro aqui")
+    const { id } = req.params;
+    Reviews.find({user: id})
+    .populate('owner')
+        .then((reviews) => {
+            res.json(reviews)
+        })
+        .catch(next)
 }
