@@ -27,3 +27,14 @@ module.exports.getTravels = (req, res, next) => {
       })
       .catch(next)
 }
+
+module.exports.getTravelsDetails = (req, res, next) => {
+  const { id } = req.params;
+
+  Travel.findById(id)
+      .populate('user')
+      .then((travel) => {
+          res.json(travel)
+      })
+      .catch(next)
+}

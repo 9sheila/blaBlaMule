@@ -19,5 +19,6 @@ router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurre
 
 // travels
 router.get('/travelsList', authMiddleware.isAuthenticated, travelController.getTravels)
+router.get('/travels/details/:id', travelController.getTravelsDetails)
 
 module.exports = router;
