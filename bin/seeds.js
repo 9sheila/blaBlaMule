@@ -18,6 +18,7 @@ mongoose.connection.once('open', () => {
           name: 'Sheyla',
           email: 'sheyla@gmail.com',
           password: '123456789',
+          phoneNumber: '641033838',
           city: 'Madrid'
          
         })
