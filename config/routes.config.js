@@ -28,4 +28,12 @@ router.get('/review/list/:id', authMiddleware.isAuthenticated, reviewsController
 router.post('/review/create', authMiddleware.isAuthenticated, reviewsController.createReviews);
 router.delete('/review/delete/:id', authMiddleware.isAuthenticated, reviewsController.deleteReviews);
 
+// /* request */
+// router.get('/requests', authMiddleware.isAuthenticated, requestController.getRequests);
+// router.patch('/request/edit/:id', authMiddleware.isAuthenticated, friendRequestController.respondToFriendRequest);
+// router.get('/friends', authMiddleware.isAuthenticated, friendRequestController.getFriends);
+// router.get('/friend-requests/pending', authMiddleware.isAuthenticated, friendRequestController.getPendingFriendRequests);
+// router.delete('/friend-request/delete/:id', authMiddleware.isAuthenticated, friendRequestController.cancelFriendRequest);
+// router.post('/friend-request/:id', authMiddleware.isAuthenticated, friendRequestController.sendFriendRequest);
+
 module.exports = router;
