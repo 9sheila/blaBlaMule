@@ -16,6 +16,10 @@ const requestSchema = new mongoose.Schema({
         type: String,
         enum: ['pending', 'accepted', 'rejected'],
         default: 'pending' 
+    },
+    dismissed: {
+        type: Boolean,
+        default: false,
     }
 },
 {

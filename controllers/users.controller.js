@@ -1,5 +1,5 @@
 const createHttpError = require('http-errors');
-const User = require('../models/User.model');
+const User = require('../models/user.model');
 const { StatusCodes } = require('http-status-codes');
 
 module.exports.getCurrentUser = (req, res, next) => {

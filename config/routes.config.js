@@ -1,8 +1,9 @@
 const router = require('express').Router();
 const authController = require('../controllers/auth.controller');
 const usersController = require('../controllers/users.controller');
-const travelController = require('../controllers/travel.controller')
-const reviewsController = require('../controllers/reviews.controller')
+const travelController = require('../controllers/travel.controller');
+const reviewsController = require('../controllers/reviews.controller');
+const requestsController = require('../controllers/requests.controller');
 const authMiddleware = require('../middlewares/auth.middleware');
 const upload = require('../config/storage.config');
 
@@ -29,11 +30,14 @@ router.post('/review/create', authMiddleware.isAuthenticated, reviewsController.
 router.delete('/review/delete/:id', authMiddleware.isAuthenticated, reviewsController.deleteReviews);
 
 // /* request */
-// router.get('/requests', authMiddleware.isAuthenticated, requestController.getRequests);
-// router.patch('/request/edit/:id', authMiddleware.isAuthenticated, friendRequestController.respondToFriendRequest);
-// router.get('/friends', authMiddleware.isAuthenticated, friendRequestController.getFriends);
-// router.get('/friend-requests/pending', authMiddleware.isAuthenticated, friendRequestController.getPendingFriendRequests);
-// router.delete('/friend-request/delete/:id', authMiddleware.isAuthenticated, friendRequestController.cancelFriendRequest);
-// router.post('/friend-request/:id', authMiddleware.isAuthenticated, friendRequestController.sendFriendRequest);
+ router.get('/requestsList', authMiddleware.isAuthenticated, requestsController.getRequests);
+ router.patch('/request/edit/:id', authMiddleware.isAuthenticated, requestsController.respondToRequest);
+ router.get('/connections', authMiddleware.isAuthenticated, requestsController.getConnected);
+ router.get('/requests/pending', authMiddleware.isAuthenticated, requestsController.getPendingRequests);
+ router.delete('/request/delete/:id', authMiddleware.isAuthenticated, requestsController.cancelRequest);
+ router.post('/request/:id', authMiddleware.isAuthenticated, requestsController.sendRequest);
+ router.get('/request/accepted', authMiddleware.isAuthenticated, requestsController.getAcceptedRequest);
+ router.get('/request/dismissed/:id', authMiddleware.isAuthenticated, requestsController.onDismissedReq);
 
+ 
 module.exports = router;
