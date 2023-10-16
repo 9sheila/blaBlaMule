@@ -20,6 +20,7 @@ module.exports.login = (req, res, next) => {
   if (!email || !password) {
     return next(loginError);
   }
+  
 
   // Check email
   User.findOne({ email })

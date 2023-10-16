@@ -21,8 +21,9 @@ router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurre
 router.get('/users/detail/:id', authMiddleware.isAuthenticated, usersController.getUser)
 
 // travels
-router.get('/travelsList', authMiddleware.isAuthenticated, travelController.getTravels)
-router.get('/travels/details/:id', authMiddleware.isAuthenticated, travelController.getTravelsDetails)
+router.get('/travelsList', authMiddleware.isAuthenticated, travelController.getTravels);
+router.get('/travels/details/:id', authMiddleware.isAuthenticated, travelController.getTravelsDetails);
+router.post('/addTrip', authMiddleware.isAuthenticated, travelController.addTrip);
 
 // reviews
 router.get('/review/list/:id', authMiddleware.isAuthenticated, reviewsController.listReviews);
@@ -39,5 +40,5 @@ router.delete('/review/delete/:id', authMiddleware.isAuthenticated, reviewsContr
  router.get('/request/accepted', authMiddleware.isAuthenticated, requestsController.getAcceptedRequest);
  router.get('/request/dismissed/:id', authMiddleware.isAuthenticated, requestsController.onDismissedReq);
 
- 
+
 module.exports = router;
