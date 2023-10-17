@@ -12,6 +12,10 @@ const travelSchema = new mongoose.Schema(
             max: 56,
             required: true,
         },
+        price: {
+            type: Number,
+            required: true
+        },
         date: {
             type: Date,
             default: Date.now,

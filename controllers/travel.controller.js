@@ -25,7 +25,12 @@ module.exports.getTravelsDetails = (req, res, next) => {
 
 module.exports.addTrip = (req, res, next) => {
 
-    Travel.create(req.body)
+    const body = {
+        ...req.body, 
+        user: req.currentUser
+    }
+
+    Travel.create(body)
         .then(travel => res.status(StatusCodes.CREATED).json(travel))
         .catch(next)
 }
