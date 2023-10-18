@@ -18,10 +18,12 @@ router.post('/login', authController.login);
 
 // users
 router.get('/users/me', authMiddleware.isAuthenticated, usersController.getCurrentUser);
-router.get('/users/detail/:id', authMiddleware.isAuthenticated, usersController.getUser)
+router.get('/users/detail/:id', authMiddleware.isAuthenticated, usersController.getUser);
+
 
 // travels
 router.get('/travelsList', authMiddleware.isAuthenticated, travelController.getTravels);
+router.get('/user/travels/:id', authMiddleware.isAuthenticated, travelController.getUserTravels);
 router.get('/travels/details/:id', authMiddleware.isAuthenticated, travelController.getTravelsDetails);
 router.post('/addTrip', authMiddleware.isAuthenticated, travelController.addTrip);
 

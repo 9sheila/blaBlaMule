@@ -15,10 +15,11 @@ mongoose.connection.once('open', () => {
     .dropDatabase()
     .then(() => console.log(`- Database dropped`))
     .then(() => User.create({
-          name: 'Sheyla',
-          email: 'sheyla@gmail.com',
+          name: 'Robin Scherbatsky',
+          email: 'robin@gmail.com',
           password: '123456789',
           phoneNumber: '641033838',
+          profilePicture:"https://depor.com/resizer/Ch_OY3jcK5FBxlChG8KmMu8o1l4=/620x0/smart/filters:format(jpeg):quality(75)/cloudfront-us-east-1.images.arcpublishing.com/elcomercio/SVYYUUKCKZDYHF7VWCS2PSCYBI.jpg",
           city: 'Madrid'
          
         })

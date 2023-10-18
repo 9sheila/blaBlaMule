@@ -34,3 +34,15 @@ module.exports.addTrip = (req, res, next) => {
         .then(travel => res.status(StatusCodes.CREATED).json(travel))
         .catch(next)
 }
+
+module.exports.getUserTravels = (req,res,next) => {
+    const { id } = req.params;
+
+    Travel.find({ user: id }) 
+    .populate('user')
+    .then(userTrips => {
+        
+      res.json(userTrips);
+    })
+    .catch(next)
+}
