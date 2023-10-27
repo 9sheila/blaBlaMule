@@ -23,7 +23,8 @@ router.get('/users/detail/:id', authMiddleware.isAuthenticated, usersController.
 
 // travels
 router.get('/travelsList', authMiddleware.isAuthenticated, travelController.getTravels);
-router.get('/user/travels/:id', authMiddleware.isAuthenticated, travelController.getUserTravels);
+router.patch('/travel/edit', authMiddleware.isAuthenticated, travelController.editTravel);
+router.get('/user/travels/:id', authMiddleware.isAuthenticated, travelController.getTravels);
 router.get('/travels/details/:id', authMiddleware.isAuthenticated, travelController.getTravelsDetails);
 router.post('/addTrip', authMiddleware.isAuthenticated, travelController.addTrip);
 

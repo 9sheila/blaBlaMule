@@ -35,14 +35,23 @@ module.exports.addTrip = (req, res, next) => {
         .catch(next)
 }
 
-module.exports.getUserTravels = (req,res,next) => {
+module.exports.editTravel = (req, res, next) => {
     const { id } = req.params;
-
-    Travel.find({ user: id }) 
-    .populate('user')
-    .then(userTrips => {
-        
-      res.json(userTrips);
-    })
-    .catch(next)
-}
+    const { date, startingPoint, destination, weight, price } = req.body;
+  
+    if (!date || !startingPoint || !destination || !weight || !price) {
+      return res.status(400).json({ message: 'Todos los campos son obligatorios.' });
+    }
+  
+    Travel.findByIdAndUpdate(id, { date, startingPoint, destination, weight, price }, { new: true })
+      .then(updatedTravel => {
+        if (!updatedTravel) {
+          return res.status(404).json({ message: 'Viaje no encontrado' });
+        }
+        res.json(updatedTravel);
+      })
+      .catch(err => {
+        console.error('Error al editar el viaje:', err.message);
+        next(err);
+      });
+  };
